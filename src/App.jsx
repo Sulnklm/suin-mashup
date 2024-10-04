@@ -1,6 +1,7 @@
 import { React } from "react";
-import "./App.css";
-import Card from "./Card";
+import "./index.css";
+import Card from "./components/Card";
+import Header from "./components/Header";
 
 function App() {
   const poster = [
@@ -13,14 +14,21 @@ function App() {
   ];
 
   return (
-    <main>
-      <Card name="blog 1" poster={poster[0]} />
-      <Card name="blog 2" poster={poster[1]} />
-      <Card name="blog 3" poster={poster[2]} />
-      <Card name="blog 4" poster={poster[3]} />
-      <Card name="blog 5" poster={poster[4]} />
-      <Card name="blog 6" poster={poster[5]} />
-    </main>
+    <div>
+    <Header />
+      <main>
+          <div className="flex items-center justify-center overflow-hidden relative w-full aspect-[4.8/2] video">
+             <iframe className="object-cover absolute  left-0 w-full h-full border-0" src="https://www.youtube.com/embed/LEjhY15eCx0?si=Nbw-uIrLIKeUluyL&autoplay=1&mute=1&loop=1&playlist=LEjhY15eCx0" title="YouTube video player"></iframe>
+          </div>
+          <Card name="blog 1" poster={poster[0]} />
+          <Card name="blog 2" poster={poster[1]} />
+          <Card name="blog 3" poster={poster[2]} />
+          <Card name="blog 4" poster={poster[3]} />
+          <Card name="blog 5" poster={poster[4]} />
+          <Card name="blog 6" poster={poster[5]} />
+      </main>
+    {/* <Footer /> */}
+    </div>
   );
 }
 
