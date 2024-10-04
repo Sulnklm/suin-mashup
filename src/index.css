@@ -25,4 +25,15 @@
     height: 100%;
     z-index: 1;
   }
-  
+
+  button.navbar-toggler {
+    border: none
+  }
+
+  button.navbar-toggler.collapse {
+    border: none;
+  }
+
+  .secondaryGray {
+    color: #56565fa6;
+  }
