@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 
-  .card {
-    border: 1px solid red;
-    width: 100px;
-    height: 200px;
-    margin: 20px;
-  }
   
   img {
     width: 100px;
