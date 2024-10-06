@@ -1,13 +1,8 @@
-import { React } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
+import React from "react";
 import Card from "../components/Card";
 
-function ForYou() {
-
-  // Array for Movie img.
-  const ForYou = [
+function TopMovies() {
+  const TopMovies = [
     {
       title: "1",
       imgUrl: "https://i.ebayimg.com/images/g/99cAAOSwLURe2uIm/s-l1200.jpg",
@@ -40,30 +35,21 @@ function ForYou() {
   ];
 
   return (
-    <div className="slider">
-    <h1>This is slide for "For You" section</h1>
-      <Swiper spaceBetween={50} slidesPerView={3}>
-        <SwiperSlide>
-          <Card movie={ForYou[0]} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card movie={ForYou[1]} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card movie={ForYou[2]} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card movie={ForYou[3]} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card movie={ForYou[4]} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card movie={ForYou[5]} />
-        </SwiperSlide>
-      </Swiper>
+    <div>
+
+      <div className="max-w-[70rem] mx-auto">
+      <h1>Top Movies</h1>
+        <div className="grid grid-cols-3 place-content-center row-gap-3 lg:row-gap-5">
+          <Card movie={TopMovies[0]} />
+          <Card movie={TopMovies[1]} />
+          <Card movie={TopMovies[2]} />
+          <Card movie={TopMovies[3]} />
+          <Card movie={TopMovies[4]} />
+          <Card movie={TopMovies[5]} />
+        </div>
+      </div>
     </div>
   );
 }
 
-export default ForYou;
+export default TopMovies;
