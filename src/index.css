@@ -1,15 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Protest+Strike&family=Silkscreen:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-  
-  img {
-    width: 100px;
-    height: 100px;
-  }
-  
-  
+ 
   .video::after {
     content:'';
     position: absolute;
@@ -19,6 +15,8 @@
     height: 100%;
     z-index: 1;
   }
+
+  /* For hamburger menu */
 
   button.navbar-toggler {
     border: none
@@ -30,4 +28,16 @@
 
   .secondaryGray {
     color: #56565fa6;
+  }
+
+  .movieChart_btn_wrap .tapBtn_wrap h1 ~ h1:before {
+    content:'';
+    display: block;
+    position: absolute;
+    left: -16px;
+    top: 50%;
+    width: 1px;
+    height: 14px;
+    margin-top: -7px;
+    background-color: #d8d8d8;
   }

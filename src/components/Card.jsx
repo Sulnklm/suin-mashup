@@ -14,21 +14,23 @@ function Card({ movie }) {
   };
 
   return (
-    <div className="relative border-1 aspect-[3/4] lg:w-[15rem] md:w-[13rem] w-[7rem] rounded-lg overflow-hidden">
-      <img
-        className="h-full lg:w-[15rem] md:w-[13rem] w-[7rem] object-cover"
-        src={movie.imgUrl}
-        alt={movie.title}
-      />
-      <h1 className="absolute bottom-0 left-3 lg:text-5xl text-white shadow-3xl">
-        {movie.title}
-      </h1>
-      <FontAwesomeIcon
-        className="absolute top-3 right-3 text-white  text-3xl"
-        icon={isLiked ? faHeart : regularHeart}
-        onClick={toggleHeart}
-        size="lg"
-      />
+    <div>
+      <div className="relative border-1 aspect-[3/4] lg:w-[15rem] md:w-[13rem] sm:w-[10rem] w-[7rem] rounded-lg overflow-hidden drop-shadow-lg">
+        <img
+          className="h-full lg:w-[15rem] md:w-[13rem] sm:w-[10rem] w-[7rem] object-cover"
+          src={movie.imgUrl}
+        />
+        <h1 className="absolute bottom-0 left-3 lg:text-5xl text-white drop-shadow-lg">
+          {movie.ranking}
+        </h1>
+        <FontAwesomeIcon
+          className="absolute top-3 right-3 text-white text-2xl drop-shadow-lg"
+          icon={isLiked ? faHeart : regularHeart}
+          onClick={toggleHeart}
+          size="lg"
+        />
+      </div>
+      <div></div>
     </div>
   );
 }

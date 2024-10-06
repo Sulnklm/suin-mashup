@@ -4,31 +4,31 @@ import Card from "../components/Card";
 function TopMovies() {
   const TopMovies = [
     {
-      title: "1",
+      ranking: "1",
       imgUrl: "https://i.ebayimg.com/images/g/99cAAOSwLURe2uIm/s-l1200.jpg",
     },
     {
-      title: "2",
+      ranking: "2",
       imgUrl:
         "https://image.tmdb.org/t/p/original/hKHZhUbIyUAjcSrqJThFGYIR6kI.jpg",
     },
     {
-      title: "3",
+      ranking: "3",
       imgUrl:
         "https://m.media-amazon.com/images/M/MV5BNjQ0Mzk0OTE5MF5BMl5BanBnXkFtZTgwNDkyOTI0NTM@._V1_FMjpg_UX1000_.jpg",
     },
     {
-      title: "4",
+      ranking: "4",
       imgUrl:
         "https://i.namu.wiki/i/CM9WgqYNFXtGFZCtBU1r2Exs1y-zKyjmIW55gBudgExj9Q6NIfUavAeq7Tn55FB-GxyJ8hWK9PShcQVBdxJPwQ.webp",
     },
     {
-      title: "5",
+      ranking: "5",
       imgUrl:
         "https://m.media-amazon.com/images/M/MV5BM2U1YzcyOGQtNjY5NC00ZWM0LTk0ZDItMTVhN2E2ODk3MWQ4XkEyXkFqcGc@._V1_.jpg",
     },
     {
-      title: "6",
+      ranking: "6",
       imgUrl:
         "https://i.namu.wiki/i/6hVuwddnnFRE-3O-mg0pnRK_KHXA5eNSPUhTMSpiPIH3EsYcvCfBGkoKLvKpBCg5oMzzAMqe3_lJQEg5p-DJqw.webp",
     },
@@ -36,10 +36,19 @@ function TopMovies() {
 
   return (
     <div>
+      <div className="max-w-[30rem] sm:max-w-[40rem] md:max-w-[60rem] lg:max-w-[70rem] mx-auto">
+        <div className="movieChart_btn_wrap flex m-3">
+          <div className="tapBtn_wrap inline-flex">
+            <h1 className="font-work">
+              <a href="" className="no-underline">Now Showing</a>
+            </h1>
 
-      <div className="max-w-[70rem] mx-auto">
-      <h1>Top Movies</h1>
-        <div className="grid grid-cols-3 place-content-center row-gap-3 lg:row-gap-5">
+            <h1 className="font-work">
+              <a href="" className="no-underline">Coming Soon</a>
+            </h1>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 place-items-center row-gap-3">
           <Card movie={TopMovies[0]} />
           <Card movie={TopMovies[1]} />
           <Card movie={TopMovies[2]} />

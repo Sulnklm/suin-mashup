@@ -5,10 +5,8 @@ import TopMovies from "./components/TopMovies";
 import Banner from "./Swiper/Banner";
 import ForYou from "./Swiper/ForYou";
 
-
 function App() {
   // Array for Movie img.
-  
 
   return (
     <div>
