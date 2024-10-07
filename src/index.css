@@ -65,3 +65,14 @@ button.navbar-toggler:focus {
   background-position: center;
   
 }
+.swiper-button-prev:after, .swiper-button-next:after {
+  @apply text-white text-opacity-50 rounded-full;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  @apply m-4
+}
+
+span.swiper-pagination-bullet-active {
+  @apply bg-white
+}

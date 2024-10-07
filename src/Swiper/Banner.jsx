@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation, Pagination } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import "../index.css";
 import "swiper/css";
+//Make sure to import each swiper style
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -37,18 +40,15 @@ function Banner() {
   ]);
 
   const toggleSliderHeart = (index) => {
-
     // Using the `map` method to create a new array from each element of the `bannerSlider` array.
     const updatedSlider = bannerSlider.map((movie, i) => {
-      
       // Check if the current element's index `i` matches the clicked movie's index `index`.
       if (i === index) {
-         // Spread all the existing properties of the movie object.
+        // Spread all the existing properties of the movie object.
         return { ...movie, isLiked: !movie.isLiked };
         // Toggle the current `isLiked` value and assign the new value.
-
       }
-        // If the index doesn't match, return the original `movie` object without any changes.
+      // If the index doesn't match, return the original `movie` object without any changes.
       return movie;
     });
     setBannerSlider(updatedSlider);
@@ -57,7 +57,17 @@ function Banner() {
   return (
     <div className="slider ">
       {/* Swiper composition */}
-      <Swiper spaceBetween={50} slidesPerView={1}>
+      <Swiper
+        modules={[Autoplay, Pagination, Navigation]}
+        spaceBetween={50}
+        slidesPerView={1}
+        autoplay={{
+          delay: 4500,
+          disableOnInteraction: true}}
+        pagination={{ clickable: true }}
+        navigation={true}
+      
+      >
         {/* slider layout  */}
         {/* This will loop through the movie data above*/}
         {bannerSlider.map((movie, index) => (
