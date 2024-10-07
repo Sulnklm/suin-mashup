@@ -36,19 +36,19 @@ function TopMovies() {
 
   return (
     <div>
-      <div className="max-w-[30rem] sm:max-w-[40rem] md:max-w-[60rem] lg:max-w-[70rem] mx-auto">
+      <div className="max-w-[30rem] sm:max-w-[40rem] md:max-w-[60rem] lg:max-w-[50rem] mx-auto mt-10 lg:mt-20">
         <div className="movieChart_btn_wrap flex m-3">
           <div className="tapBtn_wrap inline-flex">
             <h1 className="font-work">
-              <a href="" className="no-underline">Now Showing</a>
+              <a href="" className="no-underline text-black font-silk">Now Showing</a>
             </h1>
 
-            <h1 className="font-work">
+            {/* <h1 className="font-work">
               <a href="" className="no-underline">Coming Soon</a>
-            </h1>
+            </h1> */}
           </div>
         </div>
-        <div className="grid grid-cols-3 place-items-center row-gap-3">
+        <div className="grid grid-cols-3 place-items-center lg:row-gap-5 md:row-gap-4 row-gap-4 lg:mt-10">
           <Card movie={TopMovies[0]} />
           <Card movie={TopMovies[1]} />
           <Card movie={TopMovies[2]} />

@@ -1,43 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Silkscreen:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Protest+Strike&family=Silkscreen:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Protest+Strike&family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Protest+Strike&family=Silkscreen:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
-  .video::after {
-    content:'';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
 
-  /* For hamburger menu */
+.video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
-  button.navbar-toggler {
-    border: none
-  }
+/* For hamburger menu */
 
-  button.navbar-toggler.collapse {
-    border: none;
-  }
+button.navbar-toggler {
+  border: none;
+}
 
-  .secondaryGray {
-    color: #56565fa6;
-  }
+button.navbar-toggler.collapse {
+  border: none;
+}
 
-  .movieChart_btn_wrap .tapBtn_wrap h1 ~ h1:before {
-    content:'';
-    display: block;
-    position: absolute;
-    left: -16px;
-    top: 50%;
-    width: 1px;
-    height: 14px;
-    margin-top: -7px;
-    background-color: #d8d8d8;
+button.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.secondaryGray {
+  color: #56565fa6;
+}
+
+.movieChart_btn_wrap .tapBtn_wrap h1 ~ h1:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  width: 1px;
+  height: 14px;
+  margin-top: -7px;
+  background-color: #d8d8d8;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1500ms linear infinite; /* Added 'infinite' for continuous spinning */
+}
+
+.bg-coco {
+  background-image: url("https://www.iamag.co/wp-content/uploads/2017/08/Coco-4K-5.jpg");
+  background-size: cover;
+  background-position: center;
+  
+}
