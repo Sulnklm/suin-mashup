@@ -2,8 +2,8 @@ import { React } from "react";
 import "./index.css";
 import Header from "./components/Header";
 import TopMovies from "./components/TopMovies";
-import Banner from "./Swiper/Banner";
-// import ForYou from "./Swiper/ForYou";
+import Banner from "./swiper/Banner";
+import Ranking from "./swiper/RankingSlide";
 import CDPlayer from "./components/CDPlayer";
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
       <Header />
       <main>
         <Banner />
+        <Ranking />
         <TopMovies />
-        {/* <ForYou /> */}
         <CDPlayer />
       </main>
       {/* <Footer /> */}

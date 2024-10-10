@@ -34,18 +34,6 @@ button.navbar-toggler:focus {
   color: #56565fa6;
 }
 
-.movieChart_btn_wrap .tapBtn_wrap h1 ~ h1:before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: -16px;
-  top: 50%;
-  width: 1px;
-  height: 14px;
-  margin-top: -7px;
-  background-color: #d8d8d8;
-}
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -76,3 +64,6 @@ button.navbar-toggler:focus {
 span.swiper-pagination-bullet-active {
   @apply bg-white
 }
+
+
+
