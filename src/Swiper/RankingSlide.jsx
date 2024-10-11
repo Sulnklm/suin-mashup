@@ -63,8 +63,8 @@ function Ranking() {
         modules={[EffectCoverflow, Pagination]}
         >
           {NowShowingData.nowShowingMovie.map((movie, index) => (
-            <SwiperSlide>
-              <Card key={index} movie={movie} />
+            <SwiperSlide  key={index}>
+              <Card movie={movie} />
             </SwiperSlide>
           ))}
         </Swiper>

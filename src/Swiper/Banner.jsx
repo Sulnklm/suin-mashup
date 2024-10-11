@@ -1,21 +1,27 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import "../index.css";
 import "swiper/css";
 import BannerSliderData from "../config/data.json";
- 
-//Make sure to import each swiper style
+
+// Make sure to import each swiper style
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-
 function Banner() {
-  // This is movie data
 
+  const [bannerSlider, setBannerSlider] = useState([]);
+
+  useEffect(() => {
+    // When the component is mounted, load the data.
+    setBannerSlider(BannerSliderData.bannerSlider);
+  }, []);
+
+  // State to store the slider data
   const toggleSliderHeart = (index) => {
     // Using the `map` method to create a new array from each element of the `bannerSlider` array.
     const updatedSlider = bannerSlider.map((movie, i) => {
@@ -33,24 +39,18 @@ function Banner() {
 
   return (
     <div>
-      {/* Swiper composition */}
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={50}
         slidesPerView={1}
-        autoplay={{
-          delay: 8000,
-          disableOnInteraction: true}}
+        autoplay={{ delay: 8000, disableOnInteraction: true }}
         pagination={{ clickable: true }}
         navigation={true}
         loop={true}
-      
       >
-        {/* slider layout  */}
-        {/* This will loop through the movie data above*/}
-        {BannerSliderData.bannerSlider.map((movie, index) => (
-          <SwiperSlide key={index}>
-            <div className="">
+        {bannerSlider.map((movie, index) => (
+          <SwiperSlide key={movie.ranking || index}>
+            <div>
               {/* Video */}
               <div className="flex items-center justify-center overflow-hidden relative w-full aspect-[4.78/2] lg:aspect-[4.78/2] video">
                 <iframe
@@ -68,11 +68,11 @@ function Banner() {
                   {/* Button */}
                   <button
                     className="bg-white text-black w-[13rem] rounded-full z-30 lg:mt-5"
-                    onClick={() => toggleSliderHeart(index)} // Pass index to toggle function
+                    onClick={() => toggleSliderHeart(index)}
                   >
                     <div className="flex justify-center items-center h-10">
                       <FontAwesomeIcon
-                        icon={movie.isLiked ? faHeart : regularHeart} // Use movie.isLiked here
+                        icon={movie.isLiked ? faHeart : regularHeart}
                         size="lg"
                       />
                       <p className="ml-3 mb-0">Add to Favorites</p>
